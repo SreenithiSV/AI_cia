@@ -48,11 +48,10 @@ d_h = {
     'A': {'S': np.inf, 'B': 1, 'D': 3}, 
     'B': {'S': np.inf, 'A': 2, 'C': 1}, 
     'C': {'B': 1, 'E': 2}, 
-    'E': {'C': 2, 'G': 0}, 
+    'E': {'C': 2, 'G': 0},  
     'D': {'A': 3, 'G': 1}, 
     'G': {'D': 1, 'E': 0} 
 }
-
 results = oracle_search(d, 'S', 'G', max_no_goalcutoff=3, heuristic=d_h)
 for result in results:
     print(f"Path: {result[1:]}, Cost: {result[0]}")

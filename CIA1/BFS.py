@@ -49,14 +49,15 @@ def visualize_graph(graph, explored_paths, goal_paths):
 
     plt.show()
 
+
 d = {
     'S': {'A': 2, 'B': 4},
     'A': {'S': 2, 'B': 3, 'D': 2},
     'B': {'S': 4, 'A': 3, 'C': 2},
     'C': {'B': 2, 'E': 5},
-    'E': {'C': 5},
+    'E': {'C': 5, 'G': 2}, 
     'D': {'A': 2, 'G': 4},
-    'G': {'D': 4}
+    'G': {'D': 4, 'E': 2}
 }
 
 explored_paths, goal_paths = BFS(d, 'S', 'G')

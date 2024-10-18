@@ -52,6 +52,7 @@ def form_graph(d, final_route):
 def Viz(G):
     plt.show()
 
+
 d = {
     'S': {'A': 2, 'B': 4},
     'A': {'S': 2, 'B': 3, 'D': 2},

@@ -29,6 +29,7 @@ def branch_and_bound(graph, start, end, oracle, d_h):
     print("Optimal Path:", optimal_path) 
     return optimal_path
 
+
 d = {
     'S': {'A': 2, 'B': 4},
     'A': {'S': 2, 'B': 3, 'D': 2},
@@ -39,13 +40,12 @@ d = {
     'G': {'D': 4, 'E': 2}
 }
 
-# Heuristic values for each node
 d_h = { 
     'S': {'A': 3, 'B': 2}, 
     'A': {'S': np.inf, 'B': 1, 'D': 3}, 
     'B': {'S': np.inf, 'A': 2, 'C': 1}, 
     'C': {'B': 1, 'E': 2}, 
-    'E': {'C': 2, 'G': 0}, 
+    'E': {'C': 2, 'G': 0},  
     'D': {'A': 3, 'G': 1}, 
     'G': {'D': 1, 'E': 0} 
 }

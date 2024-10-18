@@ -38,14 +38,15 @@ def BMS(graph, start, goal, max_no_goalcutoff):
     print('BMS Paths containing the goal:', goal_node)
 
     return res, goal_node
-graph_example = {
-    'S': {'A': 2, 'B': 4}, 
-    'A': {'S': 2, 'B': 3, 'D': 2}, 
-    'B': {'S': 4, 'A': 3, 'C': 2}, 
-    'C': {'B': 2, 'E': 5},  
-    'E': {'C': 5}, 
-    'D': {'A': 2, 'G': 4}, 
-    'G': {'D': 4} 
+
+d = {
+    'S': {'A': 2, 'B': 4},
+    'A': {'S': 2, 'B': 3, 'D': 2},
+    'B': {'S': 4, 'A': 3, 'C': 2},
+    'C': {'B': 2, 'E': 5},
+    'E': {'C': 5, 'G': 2}, 
+    'D': {'A': 2, 'G': 4},
+    'G': {'D': 4, 'E': 2}
 }
 
 
@@ -68,5 +69,5 @@ def visualize_graph(graph, explored_paths):
         nx.draw_networkx_edges(G, pos, edgelist=edges_in_path, edge_color='red', width=2.5)
 
     plt.show()
-explored_paths, goal_paths = BMS(graph_example, 'S', 'G', 2)
-visualize_graph(graph_example, explored_paths)
+explored_paths, goal_paths = BMS(d, 'S', 'G', 2)
+visualize_graph(d, explored_paths)
